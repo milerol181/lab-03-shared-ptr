@@ -82,9 +82,9 @@ class SharedPtr {
     else
       return false;
   }
+  auto operator*() const -> T&
   {
     if (ptr) return *ptr;
-    auto operator*() const -> T&
     else
       return nullptr;
   }
