@@ -18,8 +18,8 @@ HunterGate(
   SHA1 "35fa55bc1dfcf9f4d7264f8bb26cd1759ce1ae07"
 )
 
-# TODO: rename project and delete this comment
-project(template)
+
+project(lr3_shared_ptr)
 string(APPEND CMAKE_CXX_FLAGS " -pedantic -Werror -Wall -Wextra")
 string(APPEND CMAKE_CXX_FLAGS " -Wno-unused-command-line-argument")
 string(APPEND CMAKE_CXX_FLAGS " -Wshadow -Wnon-virtual-dtor")
@@ -27,8 +27,8 @@ string(APPEND CMAKE_CXX_FLAGS " -Wshadow -Wnon-virtual-dtor")
 hunter_add_package(GTest)
 find_package(GTest CONFIG REQUIRED)
 
-# TODO: change template word to project name and delete this comment
-add_library(template INTERFACE)
+
+add_library(lr3_shared_ptr INTERFACE)
 
 
 
@@ -37,12 +37,12 @@ add_executable(tests
   ${CMAKE_CURRENT_SOURCE_DIR}/tests/test.cpp
 )
 
-target_include_directories(template
+target_include_directories(lr3_shared_ptr
   INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
-# TODO: change template word to project name and delete this comment
-target_link_libraries(tests GTest::gtest_main template)
+
+target_link_libraries(tests GTest::gtest_main lr3_shared_ptr)
 
 enable_testing()
 add_test(NAME unit_tests COMMAND tests)
