@@ -1,7 +1,7 @@
 // Copyright 2020 Your Name <your_email>
 
-#ifndef INCLUDE_HEADER_HPP_
-#define INCLUDE_HEADER_HPP_
+#ifndef INCLUDE_SHARED_PTR_HPP_
+#define INCLUDE_SHARED_PTR_HPP_
 #include <atomic>
 #include <iostream>
 #include <utility>
@@ -99,7 +99,7 @@ class SharedPtr {
   }
   void reset()
   {
-    if (*count_ptr==1)
+    if (*count_ptr == 1)
     {
       delete ptr;
       delete count_ptr;
@@ -110,7 +110,7 @@ class SharedPtr {
   }
   void reset(T* point)
   {
-    if (*count_ptr==1)
+    if (*count_ptr == 1)
     {
       delete ptr;
       delete count_ptr;
@@ -146,6 +146,5 @@ class SharedPtr {
  private:
     T* ptr;
     std::atomic_uint* count_ptr;
-
 };
-#endif // INCLUDE_HEADER_HPP_
+#endif //INCLUDE_SHARED_PTR_HPP_
