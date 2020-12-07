@@ -45,7 +45,7 @@ class SharedPtr {
   ~SharedPtr()
   {
     if (count_ptr){
-    if (*count_ptr==1)
+    if (*count_ptr == 1)
     {
     delete ptr;
     delete count_ptr;
@@ -134,7 +134,8 @@ class SharedPtr {
     r.count_ptr = count_ptr;
     count_ptr = tmp_count_ptr;
   }
-  // возвращает количество объектов SharedPtr, которые ссылаются на тот же управляемый объект
+  // возвращает количество объектов SharedPtr,
+  // которые ссылаются на тот же управляемый объект
   auto use_count() const -> size_t
   {
     if (count_ptr) {
